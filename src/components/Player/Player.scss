@@ -1,0 +1,100 @@
+.player {
+    width: 60%;
+    margin: 0 auto;
+    transition: 0.5s;
+  
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      button {
+        border: 2px solid black;
+        padding: 5px 10px;
+        display: flex;
+        align-items: center;
+        background-color: white;
+        cursor: pointer;
+        &.show {
+          background-color: black;
+          color: white;
+        }
+      }
+    }
+    .content {
+      width: 90%;
+      margin: auto;
+      text-align: center;
+      img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        &.playing {
+          animation: rotate infinite linear  5s;
+          @keyframes rotate {
+            from {
+              transform: rotate(0);
+            }
+            to {
+              transform: rotate(360deg);
+            }
+          }
+        }
+      }
+      .artist {
+        color: rgb(201, 193, 193);
+        margin-top: 0;
+        margin-bottom: 40px;
+      }
+      .timer {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+        gap: 20px;
+        .range {
+          flex-grow: 1;
+          height: 10px;
+          position: relative;
+          border-radius: 10px;
+          overflow: hidden;
+  
+          .inputGradient {
+            pointer-events: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            content: "";
+            .inputGradientRight {
+              pointer-events: none;
+              position: absolute;
+              right: 0;
+              top: 0;
+              width: 50%;
+              background-color: lightgray;
+              height: 100%;
+              content: "";
+            }
+          }
+          input {
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            -webkit-appearance: none;
+            background-color: lightgray;
+            margin: 0;
+            &::-webkit-slider-thumb {
+              opacity: 0;
+            }
+          }
+        }
+      }
+   
+    }
+  }
+  

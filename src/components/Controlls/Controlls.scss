@@ -1,0 +1,9 @@
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    svg {
+      font-size: 30px;
+      cursor: pointer;
+    }
+  }
